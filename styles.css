@@ -1,0 +1,609 @@
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .dj-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .dj-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .dj-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 3px solid rgba(255,255,255,0.3);
+            object-fit: cover;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .dj-avatar:hover {
+            transform: scale(1.1);
+            border-color: #ff6b6b;
+        }
+
+        .dj-details h3 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+            color: #ff6b6b;
+        }
+
+        .dj-details .dj-status {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 5px;
+        }
+
+        .dj-details .dj-show {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        .dj-controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .dj-input {
+            width: 200px;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            font-size: 0.9rem;
+            margin: 5px;
+        }
+
+        .dj-input::placeholder {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .btn-small {
+            padding: 8px 15px;
+            font-size: 0.9rem;
+        }
+
+        .player-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .live-player {
+            text-align: center;
+        }
+
+        .live-status {
+            display: inline-flex;
+            align-items: center;
+            background: #ff4757;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        .live-dot {
+            width: 8px;
+            height: 8px;
+            background: white;
+            border-radius: 50%;
+            margin-right: 8px;
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0.3; }
+        }
+
+        .stream-input {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            font-size: 1rem;
+        }
+
+        .stream-input::placeholder {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .btn {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            border: none;
+            color: white;
+            padding: 12px 25px;
+            font-size: 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 5px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(45deg, #3742fa, #2f3542);
+        }
+
+        .chat-container {
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-messages {
+            flex: 1;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 15px;
+            overflow-y: auto;
+            margin-bottom: 15px;
+            max-height: 280px;
+        }
+
+        .chat-message {
+            margin-bottom: 12px;
+            padding: 8px 12px;
+            border-radius: 12px;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        .chat-message.system {
+            background: rgba(255, 107, 107, 0.2);
+            color: #ffcccb;
+            font-style: italic;
+            text-align: center;
+        }
+
+        .chat-message.user {
+            background: rgba(255, 255, 255, 0.1);
+            border-left: 3px solid #ff6b6b;
+        }
+
+        .message-author {
+            font-weight: bold;
+            color: #ff6b6b;
+            font-size: 0.9rem;
+            margin-bottom: 3px;
+        }
+
+        .message-content {
+            color: white;
+            line-height: 1.4;
+        }
+
+        .message-time {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.5);
+            float: right;
+            margin-top: 5px;
+        }
+
+        .chat-input-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .chat-input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .chat-send-btn {
+            border-radius: 25px;
+            padding: 12px 20px;
+            white-space: nowrap;
+        }
+
+        .chat-actions {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .btn-whatsapp {
+            background: linear-gradient(45deg, #25d366, #128c7e);
+            border-radius: 25px;
+            padding: 12px 25px;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-whatsapp:hover {
+            background: linear-gradient(45deg, #128c7e, #075e54);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        .lfm-quick-play {
+            margin: 15px 0;
+        }
+
+        .btn-lfm {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            border-radius: 25px;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .btn-lfm:hover {
+            background: linear-gradient(45deg, #ee5a24, #c44569);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.5);
+        }
+
+        .chat-user-info {
+            text-align: center;
+        }
+
+        .chat-name-input {
+            width: 200px;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .chat-name-input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .current-track {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .copyright-info {
+            margin-bottom: 15px;
+        }
+
+        .copyright-text {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            opacity: 0.9;
+        }
+
+        .copyright-text strong {
+            color: #ff6b6b;
+            font-weight: bold;
+        }
+
+        .copyright-subtitle {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #ff6b6b;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .volume-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .volume-slider {
+            width: 100px;
+            height: 5px;
+            border-radius: 5px;
+            background: rgba(255,255,255,0.3);
+            outline: none;
+            cursor: pointer;
+        }
+
+        .equalizer {
+            display: flex;
+            justify-content: center;
+            gap: 3px;
+            margin-top: 15px;
+        }
+
+        .eq-bar {
+            width: 4px;
+            background: #ff6b6b;
+            border-radius: 2px;
+            animation: eq-dance 0.8s ease-in-out infinite alternate;
+        }
+
+        .eq-bar:nth-child(1) { height: 20px; animation-delay: 0s; }
+        .eq-bar:nth-child(2) { height: 35px; animation-delay: 0.1s; }
+        .eq-bar:nth-child(3) { height: 25px; animation-delay: 0.2s; }
+        .eq-bar:nth-child(4) { height: 40px; animation-delay: 0.3s; }
+        .eq-bar:nth-child(5) { height: 15px; animation-delay: 0.4s; }
+        .eq-bar:nth-child(6) { height: 30px; animation-delay: 0.5s; }
+
+        @keyframes eq-dance {
+            0% { height: 20px; }
+            100% { height: 5px; }
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .logo {
+                font-size: 2rem;
+            }
+            
+            .player-section {
+                padding: 20px;
+            }
+
+            .dj-section {
+                padding: 20px;
+            }
+
+            .dj-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .dj-avatar {
+                width: 60px;
+                height: 60px;
+            }
+
+            .dj-details h3 {
+                font-size: 1.5rem;
+            }
+
+            .dj-controls {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .dj-input {
+                width: 250px;
+                margin: 3px 0;
+            }
+
+            .chat-input-container {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .chat-send-btn {
+                width: 100%;
+            }
+
+            .btn-whatsapp {
+                width: 80%;
+                padding: 15px 25px;
+                font-size: 1.1rem;
+            }
+
+            .controls {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .btn {
+                margin: 5px 3px;
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+
+            .volume-control {
+                margin-top: 15px;
+                justify-content: center;
+            }
+
+            .volume-slider {
+                width: 150px;
+            }
+
+            .stream-input {
+                font-size: 0.9rem;
+                margin-bottom: 12px;
+            }
+
+            .chat-messages {
+                max-height: 250px;
+                font-size: 0.9rem;
+            }
+
+            .chat-input {
+                font-size: 0.9rem;
+                padding: 10px;
+            }
+
+            .current-track {
+                padding: 15px;
+            }
+
+            .copyright-text {
+                font-size: 1rem;
+            }
+
+            .copyright-subtitle {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 15px;
+            }
+
+            .logo {
+                font-size: 1.8rem;
+            }
+
+            .tagline {
+                font-size: 1rem;
+            }
+
+            .player-section {
+                padding: 15px;
+            }
+
+            .dj-section {
+                padding: 15px;
+            }
+
+            .section-title {
+                font-size: 1.3rem;
+            }
+
+            .dj-input {
+                width: 200px;
+            }
+
+            .btn {
+                padding: 8px 15px;
+                font-size: 0.85rem;
+            }
+
+            .chat-messages {
+                max-height: 200px;
+                padding: 10px;
+            }
+
+            .chat-message {
+                padding: 6px 10px;
+                margin-bottom: 8px;
+            }
+
+            .message-author {
+                font-size: 0.8rem;
+            }
+
+            .message-content {
+                font-size: 0.85rem;
+            }
+
+            .copyright-text {
+                font-size: 0.9rem;
+            }
+
+            .copyright-subtitle {
+                font-size: 1rem;
+            }
+        }
+    

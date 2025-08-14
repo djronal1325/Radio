@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Radio Música - Tu Estación Favorita</title>
+
+</head>
+<body>
+<div class="container">
+<header>
+<div class="logo">📻 LFM RADIO</div>
+<div class="tagline">Tu música favorita, 24/7</div>
+</header>
+<!-- Sección del DJ -->
+<div class="dj-section">
+<h2 class="section-title">🎧 DJ EN VIVO</h2>
+<div class="dj-info">
+<div class="dj-details">
+<h3 id="djName">ANDRES DJ</h3>
+</div>
+</div>
+</div>
+<div class="main-content">
+<div class="player-section">
+<h2 class="section-title">🔴 Transmisión en Vivo</h2>
+<div class="live-player">
+<input id="streamUrl" type="hidden" value="https://uk6freenew.listen2myradio.com/live.mp3?typeportmount=s1_8571_stream_296700849"/>
+<audio autoplay="" controls="" id="lfmPlayer" style="width:100%; margin-top:15px;">
+<source src="https://uk6freenew.listen2myradio.com/live.mp3?typeportmount=s1_8571_stream_296700849" type="audio/mpeg"/>
+  Tu navegador no soporta la reproducción de audio.
+</audio>
+<div class="live-status">
+<div class="live-dot"></div>
+                        EN VIVO
+                    </div>
+<div class="volume-control">
+<span>🔊</span>
+<input class="volume-slider" id="liveVolume" max="100" min="0" onchange="setLiveVolume(this.value)" type="range" value="50"/>
+</div>
+<div class="equalizer" id="liveEqualizer" style="display: none;">
+<div class="eq-bar"></div>
+<div class="eq-bar"></div>
+<div class="eq-bar"></div>
+<div class="eq-bar"></div>
+<div class="eq-bar"></div>
+<div class="eq-bar"></div>
+</div>
+</div>
+</div>
+<div class="player-section">
+<h2 class="section-title">💬 Chat en Vivo</h2>
+<div class="chat-container">
+<div class="chat-messages" id="chatMessages">
+<div class="chat-message system">
+<span class="message-content">¡Bienvenidos al chat! Pidan sus canciones favoritas 🎵</span>
+</div>
+</div>
+<div class="chat-input-container">
+<input class="chat-input" id="chatInput" maxlength="200" placeholder="Escribe tu mensaje o pide una canción..." type="text"/>
+<button class="btn chat-send-btn" onclick="sendMessage()">Enviar</button>
+</div>
+<div class="chat-user-info">
+<input class="chat-name-input" id="userName" maxlength="20" placeholder="Tu nombre" type="text"/>
+</div>
+<div class="chat-actions">
+<button class="btn btn-whatsapp" onclick="openWhatsAppDedication()">
+                            💌 Dedicar Canción
+                        </button>
+</div>
+</div>
+</div>
+</div>
+<div class="current-track">
+<div class="copyright-info">
+<div class="copyright-text">© 2025 <strong>Luis Fernando Medina</strong></div>
+<div class="copyright-subtitle">Diosprimero</div>
+</div>
+<div class="equalizer" id="liveEqualizerFooter" style="display: none;">
+<div class="eq-bar"></div>
+<div class="eq-bar"></div>
+<div class="eq-bar"></div>
+<div class="eq-bar"></div>
+<div class="eq-bar"></div>
+<div class="eq-bar"></div>
+</div>
+</div>
+</div>
+
+<!-- Firebase Chat (IDs adaptados a tu HTML) -->
+
+</body>
+</html>
